@@ -174,3 +174,9 @@
 
 </body>
 </html>
+<script>
+$('.menu-item').click(function(){
+$('.menu-item').removeClass('open');
+$(this).addClass('open');
+});
+</script>
