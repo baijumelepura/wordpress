@@ -76,53 +76,16 @@
                                 </a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations-delay="1.8s" data-animations="fadeInUp">
-                            <ul class="nav navbar-nav bg-none navbar-right style-3">
-                                <li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'index.php'){echo 'active'; }else { echo ''; } ?>">
-                                    <a href="javascript:void(0);" onclick="home();" class="dropdown-toggle flip-animate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Home">Home </span> </a>
-                                    
-                                </li>
-                                
-                                <li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'aboutus.php'){echo 'active'; } elseif(basename($_SERVER['SCRIPT_NAME']) == 'docpro.php'){echo 'active'; } else { echo ''; } ?>">
-                                    <a href="" class="dropdown-toggle flip-animate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span data-hover="Doctors">Doctors <i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
-                                    <ul class="dropdown-menu">
-                                    <li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'docpro.php'){echo 'active'; } ?>"><a href="docpro.php">Dr Samir Chebaro</a>
-                                        </li>
-									
-                                    </ul>
-                                </li>
-                               
-                                <li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'facial_rej.php'){echo 'active'; }else { echo ''; } ?>">
-                                    <a href="" class="dropdown-toggle flip-animate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Services">Services <i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'facial_rej.php'){echo 'active'; }else { echo ''; } ?>"><a href="facial_rej.php">Facial Rejuvenation</a></li>
-										<li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'breast.php'){echo 'active'; }else { echo ''; } ?>"><a href="breast.php">Breast</a></li>
-										<li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'lipo.php'){echo 'active'; }else { echo ''; } ?>"><a href="lipo.php">Lipo</a></li>
-										<li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'rhino.php'){echo 'active'; }else { echo ''; } ?>"><a href="rhino.php">Rhino</a></li>
-										<li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'tummy.php'){echo 'active'; }else { echo ''; } ?>"><a href="tummy.php">Tummy Tuck</a></li>
-										<li  class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'dental.php'){echo 'active'; }else { echo ''; } ?>"><a href="dental.php">Dental</a></li>
-                                  
-                                    </ul>
-                                </li>
-                                 <li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'port.php'){echo 'active'; }else { echo ''; } ?>">
-                                    <a href="javascript:void(0)" onclick="before();" class="dropdown-toggle flip-animate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Before and After">Before and After </span></a>
-                                          </li>
-								<li >
-                                    <a href="javascript:void(0)" onclick="book();" class="dropdown-toggle flip-animate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Book Now">Book Now</span></a>
-                                    
-                                </li>
-								
-                                 <li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'procedures.php'){echo 'active'; }else { echo ''; } ?>">
-                                    <a href="javascript:void(0)" onclick="con();" class="dropdown-toggle flip-animate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Crisalix 3D">Crisalix 3D </span></a>
-                                    
-                                </li>
-								
-								<li class="<?php if(basename($_SERVER['SCRIPT_NAME']) == 'contact.php'){echo 'active'; }else { echo ''; } ?>">
-                                    <a href="javascript:void(0)" onclick="cont();" class="dropdown-toggle flip-animate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-hover="Contact">Contact</span></a>
-                                    
-                                </li>
-                          
-								
-                            </ul>
+                        
+							<?php 
+$args = array(
+'theme_location' => 'top',
+    'menu_class' => 'nav navbar-nav bg-none navbar-right style-3',        
+    'menu' => 'top-menu',
+	'container' => 'ul',
+);
+wp_nav_menu( $args ); 
+?>
                         </div>
                     </nav>
                 </div>
@@ -130,7 +93,54 @@
         </div>
     </div>
 
-
+<style>
+    @media (min-width: 768px)
+.navbar-right .sub-menu {
+    right: 0;
+    left: auto;
+}
+.open>.sub-menu {
+    display: block;
+}
+    .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.menu-item-has-children>ul>li:last-child>a {
+    border-bottom: none;
+}
+.menu-item-has-children>ul>li>a {
+    padding: 15px 20px;
+    border-bottom: 1px dashed #171A23;
+}
+.menu-item-has-children>ul>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+</style>
 
 
 
