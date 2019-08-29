@@ -124,24 +124,43 @@ function elitepsc_scripts() {
 /*
 * JS
 */
-  wp_enqueue_script( 'elitepsc_1', get_template_directory_uri() . '/js/jquery.min.js', array(), '20151215', true );
-  wp_enqueue_script( 'elitepsc_2', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20151215', true );
-  wp_enqueue_script( 'elitepsc_3', get_template_directory_uri() . '/js/bootstrap-datepicker.min.js', array(), '20151215', true );
-  wp_enqueue_script( 'elitepsc_4', get_template_directory_uri() . '/js/css3-animate-it.js', array(), '20151215', true );
-  wp_enqueue_script( 'elitepsc_5', get_template_directory_uri() . '/js/bootstrap-datepicker.min.js', array(), '20151215', true );
-  wp_enqueue_script( 'elitepsc_6', get_template_directory_uri() . '/js/css3-animate-it.js', array(), '20151215', true );
-  wp_enqueue_script( 'elitepsc_7', get_template_directory_uri() . '/js/bootstrap-dropdownhover.min.js', array(), '20151215', true );
+$link = $_SERVER['PHP_SELF'];
+$link_array = explode('/',$link);
+foreach( $link_array as $link_array){
+	if( $link_array != '')$link_arrays[]=$link_array;
+}
+
+
+if(end($link_arrays) != 'book-now'){
+wp_enqueue_script( 'elitepsc_1', get_template_directory_uri() . '/js/jquery.min.js', array(), '20151215', true );
+wp_enqueue_script( 'elitepsc_2', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20151215', true );
+wp_enqueue_script( 'elitepsc_3', get_template_directory_uri() . '/js/bootstrap-datepicker.min.js', array(), '20151215', true );
+wp_enqueue_script( 'elitepsc_4', get_template_directory_uri() . '/js/css3-animate-it.js', array(), '20151215', true );
+wp_enqueue_script( 'elitepsc_5', get_template_directory_uri() . '/js/bootstrap-datepicker.min.js', array(), '20151215', true );
+wp_enqueue_script( 'elitepsc_6', get_template_directory_uri() . '/js/css3-animate-it.js', array(), '20151215', true );
+wp_enqueue_script( 'elitepsc_7', get_template_directory_uri() . '/js/bootstrap-dropdownhover.min.js', array(), '20151215', true );
  wp_enqueue_script( 'elitepsc_8', get_template_directory_uri() . '/js/owl.carousel.min.js', array(), '20151215', true );
  wp_enqueue_script( 'elitepsc_9', get_template_directory_uri() . '/js/gallery.js', array(), '20151215', true );
  wp_enqueue_script( 'elitepsc_10', get_template_directory_uri() . '/js/player.min.js', array(), '20151215', true );
  wp_enqueue_script( 'elitepsc_11', get_template_directory_uri() . '/js/comming-soon.js', array(), '20151215', true );
  wp_enqueue_script( 'elitepsc_12', get_template_directory_uri() . '/js/script.js', array(), '20151215', true );
- 
  // CSS
  wp_enqueue_style( 'elitepsc-style',get_template_directory_uri().'/css/bootstrap.min.css' );
  wp_enqueue_style( 'elitepsc-style_1',get_template_directory_uri().'/css/style.css');
-
  wp_enqueue_style( 'elitepsc-style_3',get_template_directory_uri(). '/css/responsive.css');
+}
+
+if(end($link_arrays) == 'book-now'){
+	wp_enqueue_script( 'elitepsc_1', get_template_directory_uri() . '/appointment/js/jquery-2.1.4.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'elitepsc_2', get_template_directory_uri() . '/appointment/js/jquery-ui.js', array(), '20151215', true );
+	wp_enqueue_script( 'elitepsc_3', get_template_directory_uri() . '/appointment/js/wickedpicker.js', array(), '20151215', true );
+
+	wp_enqueue_style( 'elitepsc-style',get_template_directory_uri().'/appointment/css/jquery-ui.css' );
+	wp_enqueue_style( 'elitepsc-style_1',get_template_directory_uri().'/appointment/css/wickedpicker.css');
+	wp_enqueue_style( 'elitepsc-style_3',get_template_directory_uri(). '/appointment/css/style.css');
+}
+
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 	 wp_enqueue_script( 'comment-reply' );

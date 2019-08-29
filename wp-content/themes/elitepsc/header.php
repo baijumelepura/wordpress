@@ -29,7 +29,7 @@
 
 <body <?php body_class(); ?>>
 
-
+<?php if(basename(get_permalink()) != 'book-now'){ ?>
 
     <div class="preloader" ></div>
 
@@ -92,7 +92,7 @@ wp_nav_menu( $args );
             </div>
         </div>
     </div>
-
+<?php } ?>
 <style>
     @media (min-width: 768px)
 .navbar-right .sub-menu {

@@ -29,7 +29,10 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
- */ ?><footer class="bg-faded">
+ */ 
+
+if(basename(get_permalink()) != 'book-now'){ ?>
+      <footer class="bg-faded">
           <div class="container">
             <div class="section-content">
               <div class="row">
@@ -119,8 +122,7 @@
                       <i class="pe-7s-phone"></i>
                       <h5 class="theme-color">Call Us</h5>
                       <p>Phone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a href="#">+961-1 786673</a></p>
-					  <p>Whatsapp :<a href="#">+961-3 851334</a></p>
-                      
+					            <p>Whatsapp :<a href="#">+961-3 851334</a></p>
                     </div>
                   </div>
                 </div>
@@ -163,15 +165,8 @@
         </div>
       </div>
     </section>
-
-
-
-
-<?php wp_footer(); ?>
-
-
-
-
+<?php 
+} wp_footer(); ?>
 </body>
 </html>
 <script>
